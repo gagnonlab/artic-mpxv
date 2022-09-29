@@ -1,0 +1,10 @@
+{
+  "name": "ARTIC Monkeypox protocol v1.0",
+  "description": "Amplicon based sequencing of 2022 outbreak of Monkeypox.",
+  "url": "http://artic.network/",
+  "displayOptions": {
+    "coverageThresholds": {
+      ">200x": 200, ">100x": 100, ">20x": 20, "1x": 1
+    }
+  }
+}
