@@ -1,0 +1,14 @@
+#!/bin/bash
+#script to use nanopolish to find the consensus sequence for a range of barcodes
+
+if [ $# -eq 0 ]
+  then
+    echo "This command requires arguments! Use the following format: consensusCall BARCODE_DIR FAST5_DIR SUMMARY_PATH BARCODE_NUM_START BARCODE_NUM_END"
+    exit
+fi
+
+for (( c=$4; c<=$5; c++))
+do
+     artic minion --normalise 0 --threads 12 --scheme-directory /home/gagnonlab/artic-mpxv/primer_schemes B1 --read-file $1/barcode$c.fastq barcode$c --fast5-directory $2/barcode$c --sequencing-summary $3
+done
+ 

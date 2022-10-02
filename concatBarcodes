@@ -1,0 +1,14 @@
+#!/bin/bash
+#script to concatenate all fastq files for a given barcode into one file for use with consensus sequence finding.
+
+if [ $# -eq 0 ]
+  then
+    echo "This command requires arguments! Use the following format: concatBarcodes FASTQ_DIR SAVE_DIR BARCODE_NUM_START BARCODE_NUM_END"
+    exit
+fi
+
+for (( c=$3; c<=$4; c++))
+do
+    artic guppyplex --directory $1/barcode$c --skip-quality-check --output $2/barcode$c.fastq 
+done
+
